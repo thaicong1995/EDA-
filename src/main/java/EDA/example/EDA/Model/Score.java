@@ -25,7 +25,7 @@ public class Score {
     private Student students;
 
     @ManyToOne
-    @JoinColumn(name = "suject_id", nullable = false)
+    @JoinColumn(name = "subject_id", nullable = false)
     @JsonIgnore
     private Subject subjects;
 

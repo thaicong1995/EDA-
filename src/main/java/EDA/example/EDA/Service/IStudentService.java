@@ -8,7 +8,7 @@ import java.util.List;
 public interface IStudentService<T>{
     T findById(int id);
     List<T> findAll();
-    T insert(StudentViewModel category);
-    T update(int id, StudentViewModel category);
+    T insert(StudentViewModel student);
+    T update(int id, StudentViewModel student);
     T delete(int id);
 }

@@ -36,7 +36,7 @@ public class SubjectService implements ISubjectService {
 
     @Override
     public Object insert(SubjectViewModel subject) {
-        var sub = toModel(subject, SubjectViewModel.class);
+        var sub = toModel(subject, Subject.class);
         var saved = repo.save(sub);
         return toModel(saved, SubjectViewModel.class);
     }
@@ -45,7 +45,7 @@ public class SubjectService implements ISubjectService {
     public Object update(int id, SubjectViewModel subject) {
         Optional<Subject> exist= repo.findById(id);
         if (exist.isEmpty()) {
-            throw new RuntimeException("Category not found for ID: " + id);
+            throw new RuntimeException("Subject not found for ID: " + id);
         }
         var c = exist.get();
         c.setName(subject.getName());
